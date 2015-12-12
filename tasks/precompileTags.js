@@ -61,7 +61,9 @@ module.exports = function(grunt) {
       var bundled = "";
       
       compiledTags.map(function(tag) {
-         bundled += "Riot.precompiledTags['"+tag.fileName+"'] = { "+
+         var key = opts.indexByTagName ? tag.tagName : tag.fileName; 
+         
+         bundled += "Riot.precompiledTags['"+key+"'] = { "+
                     "tagName: '" + jsesc(tag.tagName) +"', "+
                     "html: '"    + jsesc(tag.html)    +"', "+
                     "css: '"     + jsesc(tag.css)     +"', "+

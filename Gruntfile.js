@@ -15,8 +15,9 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     precompileTags: {
-      src: ['elements/**/*.html'],
-      dest: 'precompiled-tags.js'
+      src: ['tags/**/*.html'],
+      dest: 'precompiled-tags.js',
+      indexByTagName: true
     },    
 
   });
